@@ -30,7 +30,7 @@ public class BasicConsumerProcessor extends BaseConsumerProcessor
         final long tag          = envelope.getDeliveryTag();
 
         data.routing = envelope.getRoutingKey();
-        data.body    = new String(body);
+        data.body    = new String(body,"UTF-8");
         data.amqpTag = tag;
 
         return true;
